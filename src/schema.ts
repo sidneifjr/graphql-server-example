@@ -30,7 +30,7 @@ export const typeDefs = `#graphql
 
   type Query {
     reviews: [Review]
-    game: [Game]
+    games: [Game]
     authors: [Author]
   }
 `
