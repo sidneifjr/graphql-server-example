@@ -30,7 +30,16 @@ export const typeDefs = `#graphql
 
   type Query {
     reviews: [Review]
+    review(id: ID!): Review 
+    
     games: [Game]
+    game(id: ID!): Game
+    
     authors: [Author]
+    author(id: ID!): Author
   }
 `
+
+/**
+ * Query Variable: when the user makes this query, we expect them to send a variable along with it. That variable would be the id of the review they want to fetch, since it's needed to find it in our data.
+ */

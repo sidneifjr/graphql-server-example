@@ -21,12 +21,25 @@ const resolvers = {
       return db.games 
     },
 
+    game(parent, args: { id: string }) {
+      return db.games.find((game) => game.id === args.id)
+    },
+
     authors() {
       return db.authors
     },
 
+    author(parent, args: { id: string }) {
+      return db.authors.find((author) => author.id === args.id)
+    },
+
     reviews() {
       return db.reviews
+    },
+
+    // "args" is the parameter in which we can access any query variable sent.
+    review(parent, args: { id: string }) {
+      return db.reviews.find((review) => review.id === args.id)
     }
   }
 }
